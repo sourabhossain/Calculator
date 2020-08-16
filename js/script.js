@@ -68,7 +68,7 @@ class Calculator {
               break;
 
           case '%':
-              computation = 0;
+              computation = prev % current;
               break;
 
           default:
