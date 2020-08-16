@@ -63,10 +63,12 @@ class Calculator {
             computation = prev / current;
             break;
 
-          case '√':
+          case '**':
+              computation = prev ** current;
               break;
 
           case '%':
+              computation = 0;
               break;
 
           default:
