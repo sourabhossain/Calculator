@@ -55,19 +55,34 @@ class Calculator {
             computation = prev - current;
             break;
 
-          case '*':
+          case 'x':
             computation = prev * current;
             break;
 
-          case '÷':
+          case '÷':  
             computation = prev / current;
             break;
+
+          case '√':
+              break;
+
+          case '%':
+              break;
 
           default:
             return;
         }
-
-        this.currentOperand = computation;
+        
+        if (computation.toString().includes(".")) { 
+            if (computation.toString().length < 6) {
+                this.currentOperand = computation;
+            } else {
+                this.currentOperand = computation.toFixed(6);
+            }
+        } else {
+            this.currentOperand = computation;
+        }
+ 
         this.operation = undefined;
         this.previousOperand = '';
     }    
